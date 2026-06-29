@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evidence Gap Atlas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <h1>Evidence Gap Atlas</h1>
+                <p class="subtitle">Mapping the evidence behind clinical practice guidelines</p>
+            </div>
+            <div class="header-stats">
+                <div class="stat">
+                    <span class="stat-number" id="total-recs">--</span>
+                    <span class="stat-label">Recommendations</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" id="total-guidelines">--</span>
+                    <span class="stat-label">Guidelines</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" id="total-societies">--</span>
+                    <span class="stat-label">Societies</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" id="total-specialties">--</span>
+                    <span class="stat-label">Specialties</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Top-level: overall evidence distribution -->
+        <section class="section" id="overview">
+            <h2>Overall Evidence Distribution</h2>
+            <p class="section-intro">
+                Across all extracted guidelines, how much of clinical practice is backed by high-quality evidence?
+            </p>
+            <div id="overall-distribution"></div>
+        </section>
+
+        <!-- Specialty grid: click into each -->
+        <section class="section" id="specialties">
+            <h2>By Specialty</h2>
+            <p class="section-intro">Click a specialty to explore its societies, guidelines, and individual recommendations.</p>
+            <div id="specialty-grid" class="specialty-grid"></div>
+        </section>
+
+        <!-- Drilldown panel (hidden until specialty clicked) -->
+        <section class="section hidden" id="drilldown">
+            <div id="drilldown-header"></div>
+            <div id="drilldown-distribution"></div>
+            <div id="drilldown-guidelines"></div>
+            <div id="drilldown-filters"></div>
+            <div id="drilldown-table"></div>
+        </section>
+
+        <!-- Methodology -->
+        <section class="section" id="methodology">
+            <h2>Methodology</h2>
+            <div class="method-grid">
+                <div class="method-card">
+                    <h3>What this shows</h3>
+                    <p>Each recommendation from a clinical practice guideline carries an evidence level.
+                       We extract and normalize these across all grading systems (ESC, AHA/ACC, GRADE,
+                       ESMO, ADA, AAOS, AAN, etc.) to a common 5-tier scale.</p>
+                </div>
+                <div class="method-card">
+                    <h3>Normalized evidence scale</h3>
+                    <table class="norm-table">
+                        <tr><td class="ev ev-5">A</td><td>Multiple RCTs or meta-analyses</td></tr>
+                        <tr><td class="ev ev-4">B</td><td>Single RCT or moderate certainty</td></tr>
+                        <tr><td class="ev ev-3">C</td><td>Observational or low certainty</td></tr>
+                        <tr><td class="ev ev-2">D</td><td>Case series or very low certainty</td></tr>
+                        <tr><td class="ev ev-1">E</td><td>Expert opinion or consensus only</td></tr>
+                    </table>
+                </div>
+                <div class="method-card">
+                    <h3>Selection criteria</h3>
+                    <ul>
+                        <li>Professional medical societies only</li>
+                        <li>Anchored to ABMS + UEMS specialty taxonomies</li>
+                        <li>Per-recommendation evidence grading required</li>
+                        <li>Open-access guidelines only (reproducible)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Evidence Gap Calculation -->
+        <section class="section" id="gap-calculation">
+            <h2>The Evidence Gap</h2>
+            <div class="formula-box">
+                <h3>Calculation</h3>
+                <div class="formula">Evidence Gap = 1 - Normalized LoE</div>
+                <p style="margin-top:0.75rem; line-height:1.7">
+                    Each recommendation's Level of Evidence is normalized to a 0-1 scale, where
+                    <strong>1.0</strong> = highest quality (multiple RCTs) and
+                    <strong>0.125</strong> = lowest (expert opinion only).
+                    The <strong>evidence gap</strong> is simply the complement: how far from the highest evidence standard.
+                </p>
+                <table class="norm-table" style="margin-top:1rem">
+                    <tr><td style="width:100px">A (norm 1.0)</td><td>Gap = <strong>0.00</strong></td><td style="color:var(--text-dim)">Fully evidenced</td></tr>
+                    <tr><td>B (norm 0.75)</td><td>Gap = <strong>0.25</strong></td><td style="color:var(--text-dim)">Minor gap</td></tr>
+                    <tr><td>C (norm 0.50)</td><td>Gap = <strong>0.50</strong></td><td style="color:var(--text-dim)">Moderate gap</td></tr>
+                    <tr><td>D (norm 0.25)</td><td>Gap = <strong>0.75</strong></td><td style="color:var(--text-dim)">Large gap</td></tr>
+                    <tr><td>E (norm 0.125)</td><td>Gap = <strong>0.875</strong></td><td style="color:var(--text-dim)">Almost no evidence</td></tr>
+                </table>
+                <p style="margin-top:0.75rem; line-height:1.7">
+                    A specialty's evidence gap is the mean gap across all its recommendations.
+                    A gap of <strong>0.48</strong> means the average recommendation in that specialty falls short
+                    of the RCT standard — supported by observational or low-certainty evidence rather than
+                    randomized trials. This does not mean the recommendations are wrong, but that
+                    confirmatory high-quality research is needed to strengthen the evidence base.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Evidence Gap Atlas -- Mapping clinical evidence gaps across medical specialties</p>
+        <p class="footer-note">Data as of June 2026. Research tool, not medical advice.</p>
+        <p class="footer-note"><strong>Note:</strong> All values shown reflect the primary analysis: 21 medical specialties with at least 5 guidelines each. Supplementary specialties with fewer guidelines are excluded from this view. Individual recommendation texts are truncated to 50 characters to respect guideline copyright; full texts are available to peer reviewers on request.</p>
+        <div class="footer-glossary">
+            <strong>Abbreviations:</strong>
+            LoE = Level of Evidence;
+            GPP = Good Practice Point (consensus-based, no formal evidence grading);
+            GRADE = Grading of Recommendations Assessment, Development and Evaluation;
+            Norm. = Normalized tier (A = multiple RCTs/meta-analyses, B = single RCT/moderate, C = observational/low, D = case series/very low, E = expert opinion);
+            Gap = 1.0 minus normalized score (higher = larger evidence gap).
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

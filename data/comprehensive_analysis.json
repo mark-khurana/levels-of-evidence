@@ -1,0 +1,1054 @@
+{
+  "primary_analysis": {
+    "description": "LoE-only societies, no strength-based proxies, >= 5 GL per specialty",
+    "n_recs": 22693,
+    "n_societies": 75,
+    "specialty_gaps": [
+      {
+        "specialty": "Obstetrics & Gynaecology",
+        "n_recommendations": 734,
+        "n_guidelines": 17,
+        "societies": [
+          "ACOG",
+          "RCOG",
+          "SMFM"
+        ],
+        "mean_loe": 0.336,
+        "median_loe": 0.25,
+        "sd_loe": 0.26,
+        "iqr_low": 0.125,
+        "iqr_high": 0.5,
+        "evidence_gap": 0.664,
+        "pct_level_a": 5.4,
+        "pct_level_de": 67.6
+      },
+      {
+        "specialty": "Reproductive Medicine",
+        "n_recommendations": 837,
+        "n_guidelines": 11,
+        "societies": [
+          "ASRM",
+          "ESHRE"
+        ],
+        "mean_loe": 0.344,
+        "median_loe": 0.25,
+        "sd_loe": 0.199,
+        "iqr_low": 0.125,
+        "iqr_high": 0.5,
+        "evidence_gap": 0.656,
+        "pct_level_a": 0.5,
+        "pct_level_de": 59.3
+      },
+      {
+        "specialty": "Hematology",
+        "n_recommendations": 551,
+        "n_guidelines": 22,
+        "societies": [
+          "ASH",
+          "BSH",
+          "EHA",
+          "ISTH"
+        ],
+        "mean_loe": 0.423,
+        "median_loe": 0.25,
+        "sd_loe": 0.248,
+        "iqr_low": 0.25,
+        "iqr_high": 0.5,
+        "evidence_gap": 0.577,
+        "pct_level_a": 4.7,
+        "pct_level_de": 54.4
+      },
+      {
+        "specialty": "Pulmonology",
+        "n_recommendations": 1088,
+        "n_guidelines": 31,
+        "societies": [
+          "ATS",
+          "BTS",
+          "ERS",
+          "GINA",
+          "GOLD"
+        ],
+        "mean_loe": 0.457,
+        "median_loe": 0.25,
+        "sd_loe": 0.31,
+        "iqr_low": 0.25,
+        "iqr_high": 0.75,
+        "evidence_gap": 0.543,
+        "pct_level_a": 16.1,
+        "pct_level_de": 57.2
+      },
+      {
+        "specialty": "Critical Care Medicine",
+        "n_recommendations": 406,
+        "n_guidelines": 12,
+        "societies": [
+          "ESICM",
+          "ESPEN",
+          "SCCM"
+        ],
+        "mean_loe": 0.458,
+        "median_loe": 0.5,
+        "sd_loe": 0.255,
+        "iqr_low": 0.25,
+        "iqr_high": 0.75,
+        "evidence_gap": 0.542,
+        "pct_level_a": 5.7,
+        "pct_level_de": 39.2
+      },
+      {
+        "specialty": "Cardiology",
+        "n_recommendations": 5524,
+        "n_guidelines": 39,
+        "societies": [
+          "AHA/ACC",
+          "ESC"
+        ],
+        "mean_loe": 0.468,
+        "median_loe": 0.5,
+        "sd_loe": 0.256,
+        "iqr_low": 0.25,
+        "iqr_high": 0.5,
+        "evidence_gap": 0.532,
+        "pct_level_a": 11.9,
+        "pct_level_de": 42.7
+      },
+      {
+        "specialty": "Endocrinology",
+        "n_recommendations": 2327,
+        "n_guidelines": 52,
+        "societies": [
+          "AACE",
+          "ADA",
+          "ATA",
+          "ESE",
+          "ETA",
+          "Endocrine Society",
+          "Italian Society of Arterial Hypertension",
+          "SCCM"
+        ],
+        "mean_loe": 0.477,
+        "median_loe": 0.5,
+        "sd_loe": 0.298,
+        "iqr_low": 0.125,
+        "iqr_high": 0.75,
+        "evidence_gap": 0.523,
+        "pct_level_a": 11.6,
+        "pct_level_de": 41.9
+      },
+      {
+        "specialty": "Oncology",
+        "n_recommendations": 2338,
+        "n_guidelines": 64,
+        "societies": [
+          "ASCO",
+          "ASTRO",
+          "ESGO",
+          "ESMO",
+          "ESPEN",
+          "SITC"
+        ],
+        "mean_loe": 0.496,
+        "median_loe": 0.5,
+        "sd_loe": 0.293,
+        "iqr_low": 0.25,
+        "iqr_high": 0.75,
+        "evidence_gap": 0.504,
+        "pct_level_a": 12.7,
+        "pct_level_de": 39.8
+      },
+      {
+        "specialty": "Rheumatology",
+        "n_recommendations": 1004,
+        "n_guidelines": 34,
+        "societies": [
+          "ACP",
+          "ACR",
+          "BSR",
+          "EULAR"
+        ],
+        "mean_loe": 0.503,
+        "median_loe": 0.5,
+        "sd_loe": 0.241,
+        "iqr_low": 0.25,
+        "iqr_high": 0.75,
+        "evidence_gap": 0.497,
+        "pct_level_a": 8.9,
+        "pct_level_de": 32.6
+      },
+      {
+        "specialty": "Allergy & Immunology",
+        "n_recommendations": 222,
+        "n_guidelines": 8,
+        "societies": [
+          "AAAAI",
+          "EAACI",
+          "WAO"
+        ],
+        "mean_loe": 0.51,
+        "median_loe": 0.5,
+        "sd_loe": 0.322,
+        "iqr_low": 0.25,
+        "iqr_high": 0.75,
+        "evidence_gap": 0.49,
+        "pct_level_a": 22.1,
+        "pct_level_de": 42.8
+      },
+      {
+        "specialty": "Gastroenterology",
+        "n_recommendations": 1986,
+        "n_guidelines": 66,
+        "societies": [
+          "ACG",
+          "AGA",
+          "BSG",
+          "ESGE",
+          "ESPGHAN/NASPGHAN"
+        ],
+        "mean_loe": 0.517,
+        "median_loe": 0.5,
+        "sd_loe": 0.241,
+        "iqr_low": 0.25,
+        "iqr_high": 0.75,
+        "evidence_gap": 0.483,
+        "pct_level_a": 7.0,
+        "pct_level_de": 26.6
+      },
+      {
+        "specialty": "Infectious Disease",
+        "n_recommendations": 1280,
+        "n_guidelines": 39,
+        "societies": [
+          "ASCO/IDSA",
+          "BHIVA",
+          "ESCMID",
+          "ESPID",
+          "IDSA",
+          "SHEA"
+        ],
+        "mean_loe": 0.52,
+        "median_loe": 0.5,
+        "sd_loe": 0.262,
+        "iqr_low": 0.25,
+        "iqr_high": 0.75,
+        "evidence_gap": 0.48,
+        "pct_level_a": 9.2,
+        "pct_level_de": 30.2
+      },
+      {
+        "specialty": "Nephrology",
+        "n_recommendations": 444,
+        "n_guidelines": 12,
+        "societies": [
+          "ERA (ERBP)",
+          "KDIGO"
+        ],
+        "mean_loe": 0.527,
+        "median_loe": 0.5,
+        "sd_loe": 0.267,
+        "iqr_low": 0.25,
+        "iqr_high": 0.75,
+        "evidence_gap": 0.473,
+        "pct_level_a": 12.2,
+        "pct_level_de": 32.2
+      },
+      {
+        "specialty": "Dermatology",
+        "n_recommendations": 670,
+        "n_guidelines": 22,
+        "societies": [
+          "AAD",
+          "ACP",
+          "BAD",
+          "EuroGuiDerm (EDF/EADV)"
+        ],
+        "mean_loe": 0.542,
+        "median_loe": 0.5,
+        "sd_loe": 0.268,
+        "iqr_low": 0.25,
+        "iqr_high": 0.75,
+        "evidence_gap": 0.458,
+        "pct_level_a": 16.3,
+        "pct_level_de": 28.2
+      },
+      {
+        "specialty": "Neurology",
+        "n_recommendations": 435,
+        "n_guidelines": 21,
+        "societies": [
+          "AAN",
+          "AES",
+          "EAN",
+          "ESO",
+          "ESPEN",
+          "ILAE"
+        ],
+        "mean_loe": 0.542,
+        "median_loe": 0.75,
+        "sd_loe": 0.301,
+        "iqr_low": 0.125,
+        "iqr_high": 0.75,
+        "evidence_gap": 0.458,
+        "pct_level_a": 9.4,
+        "pct_level_de": 34.0
+      },
+      {
+        "specialty": "Hepatology",
+        "n_recommendations": 956,
+        "n_guidelines": 12,
+        "societies": [
+          "AASLD",
+          "EASL"
+        ],
+        "mean_loe": 0.549,
+        "median_loe": 0.5,
+        "sd_loe": 0.277,
+        "iqr_low": 0.25,
+        "iqr_high": 0.75,
+        "evidence_gap": 0.451,
+        "pct_level_a": 15.1,
+        "pct_level_de": 28.1
+      },
+      {
+        "specialty": "Pediatrics",
+        "n_recommendations": 216,
+        "n_guidelines": 11,
+        "societies": [
+          "AAP"
+        ],
+        "mean_loe": 0.606,
+        "median_loe": 0.75,
+        "sd_loe": 0.249,
+        "iqr_low": 0.5,
+        "iqr_high": 0.75,
+        "evidence_gap": 0.394,
+        "pct_level_a": 11.1,
+        "pct_level_de": 17.6
+      },
+      {
+        "specialty": "Orthopaedic Surgery",
+        "n_recommendations": 351,
+        "n_guidelines": 17,
+        "societies": [
+          "AAOS",
+          "OTA"
+        ],
+        "mean_loe": 0.629,
+        "median_loe": 0.75,
+        "sd_loe": 0.306,
+        "iqr_low": 0.5,
+        "iqr_high": 1.0,
+        "evidence_gap": 0.371,
+        "pct_level_a": 26.5,
+        "pct_level_de": 19.1
+      },
+      {
+        "specialty": "Psychiatry",
+        "n_recommendations": 716,
+        "n_guidelines": 11,
+        "societies": [
+          "ACP",
+          "APA",
+          "BAP",
+          "CANMAT",
+          "EPA",
+          "WFSBP"
+        ],
+        "mean_loe": 0.67,
+        "median_loe": 0.75,
+        "sd_loe": 0.298,
+        "iqr_low": 0.5,
+        "iqr_high": 1.0,
+        "evidence_gap": 0.33,
+        "pct_level_a": 31.6,
+        "pct_level_de": 22.5
+      },
+      {
+        "specialty": "Otolaryngology",
+        "n_recommendations": 113,
+        "n_guidelines": 8,
+        "societies": [
+          "AAO-HNS"
+        ],
+        "mean_loe": 0.673,
+        "median_loe": 0.75,
+        "sd_loe": 0.213,
+        "iqr_low": 0.5,
+        "iqr_high": 0.75,
+        "evidence_gap": 0.327,
+        "pct_level_a": 20.4,
+        "pct_level_de": 3.5
+      },
+      {
+        "specialty": "General Surgery",
+        "n_recommendations": 495,
+        "n_guidelines": 13,
+        "societies": [
+          "ASCRS",
+          "EAST",
+          "ERAS Society",
+          "ESPEN",
+          "SAGES",
+          "WSES"
+        ],
+        "mean_loe": 0.692,
+        "median_loe": 0.75,
+        "sd_loe": 0.248,
+        "iqr_low": 0.5,
+        "iqr_high": 1.0,
+        "evidence_gap": 0.308,
+        "pct_level_a": 25.9,
+        "pct_level_de": 9.9
+      }
+    ],
+    "weighted": {
+      "n_specialties": 21,
+      "weighted_mean_gap": 0.479,
+      "weighted_median_gap": 0.483,
+      "weighted_sd_gap": 0.096,
+      "range": [
+        0.308,
+        0.664
+      ]
+    }
+  },
+  "extended_analysis": {
+    "description": "All societies including EAU/AAOS strength-as-proxy",
+    "n_recs": 22693,
+    "n_societies": 75,
+    "specialty_gaps": [
+      {
+        "specialty": "Obstetrics & Gynaecology",
+        "n_recommendations": 734,
+        "n_guidelines": 17,
+        "societies": [
+          "ACOG",
+          "RCOG",
+          "SMFM"
+        ],
+        "mean_loe": 0.336,
+        "median_loe": 0.25,
+        "sd_loe": 0.26,
+        "iqr_low": 0.125,
+        "iqr_high": 0.5,
+        "evidence_gap": 0.664,
+        "pct_level_a": 5.4,
+        "pct_level_de": 67.6
+      },
+      {
+        "specialty": "Reproductive Medicine",
+        "n_recommendations": 837,
+        "n_guidelines": 11,
+        "societies": [
+          "ASRM",
+          "ESHRE"
+        ],
+        "mean_loe": 0.344,
+        "median_loe": 0.25,
+        "sd_loe": 0.199,
+        "iqr_low": 0.125,
+        "iqr_high": 0.5,
+        "evidence_gap": 0.656,
+        "pct_level_a": 0.5,
+        "pct_level_de": 59.3
+      },
+      {
+        "specialty": "Hematology",
+        "n_recommendations": 551,
+        "n_guidelines": 22,
+        "societies": [
+          "ASH",
+          "BSH",
+          "EHA",
+          "ISTH"
+        ],
+        "mean_loe": 0.423,
+        "median_loe": 0.25,
+        "sd_loe": 0.248,
+        "iqr_low": 0.25,
+        "iqr_high": 0.5,
+        "evidence_gap": 0.577,
+        "pct_level_a": 4.7,
+        "pct_level_de": 54.4
+      },
+      {
+        "specialty": "Pulmonology",
+        "n_recommendations": 1088,
+        "n_guidelines": 31,
+        "societies": [
+          "ATS",
+          "BTS",
+          "ERS",
+          "GINA",
+          "GOLD"
+        ],
+        "mean_loe": 0.457,
+        "median_loe": 0.25,
+        "sd_loe": 0.31,
+        "iqr_low": 0.25,
+        "iqr_high": 0.75,
+        "evidence_gap": 0.543,
+        "pct_level_a": 16.1,
+        "pct_level_de": 57.2
+      },
+      {
+        "specialty": "Critical Care Medicine",
+        "n_recommendations": 406,
+        "n_guidelines": 12,
+        "societies": [
+          "ESICM",
+          "ESPEN",
+          "SCCM"
+        ],
+        "mean_loe": 0.458,
+        "median_loe": 0.5,
+        "sd_loe": 0.255,
+        "iqr_low": 0.25,
+        "iqr_high": 0.75,
+        "evidence_gap": 0.542,
+        "pct_level_a": 5.7,
+        "pct_level_de": 39.2
+      },
+      {
+        "specialty": "Cardiology",
+        "n_recommendations": 5524,
+        "n_guidelines": 39,
+        "societies": [
+          "AHA/ACC",
+          "ESC"
+        ],
+        "mean_loe": 0.468,
+        "median_loe": 0.5,
+        "sd_loe": 0.256,
+        "iqr_low": 0.25,
+        "iqr_high": 0.5,
+        "evidence_gap": 0.532,
+        "pct_level_a": 11.9,
+        "pct_level_de": 42.7
+      },
+      {
+        "specialty": "Endocrinology",
+        "n_recommendations": 2327,
+        "n_guidelines": 52,
+        "societies": [
+          "AACE",
+          "ADA",
+          "ATA",
+          "ESE",
+          "ETA",
+          "Endocrine Society",
+          "Italian Society of Arterial Hypertension",
+          "SCCM"
+        ],
+        "mean_loe": 0.477,
+        "median_loe": 0.5,
+        "sd_loe": 0.298,
+        "iqr_low": 0.125,
+        "iqr_high": 0.75,
+        "evidence_gap": 0.523,
+        "pct_level_a": 11.6,
+        "pct_level_de": 41.9
+      },
+      {
+        "specialty": "Oncology",
+        "n_recommendations": 2338,
+        "n_guidelines": 64,
+        "societies": [
+          "ASCO",
+          "ASTRO",
+          "ESGO",
+          "ESMO",
+          "ESPEN",
+          "SITC"
+        ],
+        "mean_loe": 0.496,
+        "median_loe": 0.5,
+        "sd_loe": 0.293,
+        "iqr_low": 0.25,
+        "iqr_high": 0.75,
+        "evidence_gap": 0.504,
+        "pct_level_a": 12.7,
+        "pct_level_de": 39.8
+      },
+      {
+        "specialty": "Rheumatology",
+        "n_recommendations": 1004,
+        "n_guidelines": 34,
+        "societies": [
+          "ACP",
+          "ACR",
+          "BSR",
+          "EULAR"
+        ],
+        "mean_loe": 0.503,
+        "median_loe": 0.5,
+        "sd_loe": 0.241,
+        "iqr_low": 0.25,
+        "iqr_high": 0.75,
+        "evidence_gap": 0.497,
+        "pct_level_a": 8.9,
+        "pct_level_de": 32.6
+      },
+      {
+        "specialty": "Allergy & Immunology",
+        "n_recommendations": 222,
+        "n_guidelines": 8,
+        "societies": [
+          "AAAAI",
+          "EAACI",
+          "WAO"
+        ],
+        "mean_loe": 0.51,
+        "median_loe": 0.5,
+        "sd_loe": 0.322,
+        "iqr_low": 0.25,
+        "iqr_high": 0.75,
+        "evidence_gap": 0.49,
+        "pct_level_a": 22.1,
+        "pct_level_de": 42.8
+      },
+      {
+        "specialty": "Gastroenterology",
+        "n_recommendations": 1986,
+        "n_guidelines": 66,
+        "societies": [
+          "ACG",
+          "AGA",
+          "BSG",
+          "ESGE",
+          "ESPGHAN/NASPGHAN"
+        ],
+        "mean_loe": 0.517,
+        "median_loe": 0.5,
+        "sd_loe": 0.241,
+        "iqr_low": 0.25,
+        "iqr_high": 0.75,
+        "evidence_gap": 0.483,
+        "pct_level_a": 7.0,
+        "pct_level_de": 26.6
+      },
+      {
+        "specialty": "Infectious Disease",
+        "n_recommendations": 1280,
+        "n_guidelines": 39,
+        "societies": [
+          "ASCO/IDSA",
+          "BHIVA",
+          "ESCMID",
+          "ESPID",
+          "IDSA",
+          "SHEA"
+        ],
+        "mean_loe": 0.52,
+        "median_loe": 0.5,
+        "sd_loe": 0.262,
+        "iqr_low": 0.25,
+        "iqr_high": 0.75,
+        "evidence_gap": 0.48,
+        "pct_level_a": 9.2,
+        "pct_level_de": 30.2
+      },
+      {
+        "specialty": "Nephrology",
+        "n_recommendations": 444,
+        "n_guidelines": 12,
+        "societies": [
+          "ERA (ERBP)",
+          "KDIGO"
+        ],
+        "mean_loe": 0.527,
+        "median_loe": 0.5,
+        "sd_loe": 0.267,
+        "iqr_low": 0.25,
+        "iqr_high": 0.75,
+        "evidence_gap": 0.473,
+        "pct_level_a": 12.2,
+        "pct_level_de": 32.2
+      },
+      {
+        "specialty": "Dermatology",
+        "n_recommendations": 670,
+        "n_guidelines": 22,
+        "societies": [
+          "AAD",
+          "ACP",
+          "BAD",
+          "EuroGuiDerm (EDF/EADV)"
+        ],
+        "mean_loe": 0.542,
+        "median_loe": 0.5,
+        "sd_loe": 0.268,
+        "iqr_low": 0.25,
+        "iqr_high": 0.75,
+        "evidence_gap": 0.458,
+        "pct_level_a": 16.3,
+        "pct_level_de": 28.2
+      },
+      {
+        "specialty": "Neurology",
+        "n_recommendations": 435,
+        "n_guidelines": 21,
+        "societies": [
+          "AAN",
+          "AES",
+          "EAN",
+          "ESO",
+          "ESPEN",
+          "ILAE"
+        ],
+        "mean_loe": 0.542,
+        "median_loe": 0.75,
+        "sd_loe": 0.301,
+        "iqr_low": 0.125,
+        "iqr_high": 0.75,
+        "evidence_gap": 0.458,
+        "pct_level_a": 9.4,
+        "pct_level_de": 34.0
+      },
+      {
+        "specialty": "Hepatology",
+        "n_recommendations": 956,
+        "n_guidelines": 12,
+        "societies": [
+          "AASLD",
+          "EASL"
+        ],
+        "mean_loe": 0.549,
+        "median_loe": 0.5,
+        "sd_loe": 0.277,
+        "iqr_low": 0.25,
+        "iqr_high": 0.75,
+        "evidence_gap": 0.451,
+        "pct_level_a": 15.1,
+        "pct_level_de": 28.1
+      },
+      {
+        "specialty": "Pediatrics",
+        "n_recommendations": 216,
+        "n_guidelines": 11,
+        "societies": [
+          "AAP"
+        ],
+        "mean_loe": 0.606,
+        "median_loe": 0.75,
+        "sd_loe": 0.249,
+        "iqr_low": 0.5,
+        "iqr_high": 0.75,
+        "evidence_gap": 0.394,
+        "pct_level_a": 11.1,
+        "pct_level_de": 17.6
+      },
+      {
+        "specialty": "Orthopaedic Surgery",
+        "n_recommendations": 351,
+        "n_guidelines": 17,
+        "societies": [
+          "AAOS",
+          "OTA"
+        ],
+        "mean_loe": 0.629,
+        "median_loe": 0.75,
+        "sd_loe": 0.306,
+        "iqr_low": 0.5,
+        "iqr_high": 1.0,
+        "evidence_gap": 0.371,
+        "pct_level_a": 26.5,
+        "pct_level_de": 19.1
+      },
+      {
+        "specialty": "Psychiatry",
+        "n_recommendations": 716,
+        "n_guidelines": 11,
+        "societies": [
+          "ACP",
+          "APA",
+          "BAP",
+          "CANMAT",
+          "EPA",
+          "WFSBP"
+        ],
+        "mean_loe": 0.67,
+        "median_loe": 0.75,
+        "sd_loe": 0.298,
+        "iqr_low": 0.5,
+        "iqr_high": 1.0,
+        "evidence_gap": 0.33,
+        "pct_level_a": 31.6,
+        "pct_level_de": 22.5
+      },
+      {
+        "specialty": "Otolaryngology",
+        "n_recommendations": 113,
+        "n_guidelines": 8,
+        "societies": [
+          "AAO-HNS"
+        ],
+        "mean_loe": 0.673,
+        "median_loe": 0.75,
+        "sd_loe": 0.213,
+        "iqr_low": 0.5,
+        "iqr_high": 0.75,
+        "evidence_gap": 0.327,
+        "pct_level_a": 20.4,
+        "pct_level_de": 3.5
+      },
+      {
+        "specialty": "General Surgery",
+        "n_recommendations": 495,
+        "n_guidelines": 13,
+        "societies": [
+          "ASCRS",
+          "EAST",
+          "ERAS Society",
+          "ESPEN",
+          "SAGES",
+          "WSES"
+        ],
+        "mean_loe": 0.692,
+        "median_loe": 0.75,
+        "sd_loe": 0.248,
+        "iqr_low": 0.5,
+        "iqr_high": 1.0,
+        "evidence_gap": 0.308,
+        "pct_level_a": 25.9,
+        "pct_level_de": 9.9
+      }
+    ],
+    "weighted": {
+      "n_specialties": 21,
+      "weighted_mean_gap": 0.479,
+      "weighted_median_gap": 0.483,
+      "weighted_sd_gap": 0.096,
+      "range": [
+        0.308,
+        0.664
+      ]
+    }
+  },
+  "sensitivity": {
+    "up_1_tier": {
+      "ranking": [
+        "Obstetrics & Gynaecology",
+        "Reproductive Medicine",
+        "Hematology",
+        "Pulmonology",
+        "Cardiology",
+        "Critical Care Medicine",
+        "Endocrinology",
+        "Allergy & Immunology",
+        "Oncology",
+        "Rheumatology",
+        "Nephrology",
+        "Infectious Disease",
+        "Gastroenterology",
+        "Dermatology",
+        "Hepatology",
+        "Neurology",
+        "Orthopaedic Surgery",
+        "Pediatrics",
+        "Psychiatry",
+        "Otolaryngology",
+        "General Surgery"
+      ],
+      "max_rank_change": 2,
+      "mean_rank_change": 0.67,
+      "ranking_preserved": false
+    },
+    "down_1_tier": {
+      "ranking": [
+        "Reproductive Medicine",
+        "Obstetrics & Gynaecology",
+        "Hematology",
+        "Cardiology",
+        "Critical Care Medicine",
+        "Pulmonology",
+        "Rheumatology",
+        "Endocrinology",
+        "Gastroenterology",
+        "Oncology",
+        "Infectious Disease",
+        "Nephrology",
+        "Dermatology",
+        "Allergy & Immunology",
+        "Hepatology",
+        "Neurology",
+        "Pediatrics",
+        "Orthopaedic Surgery",
+        "Otolaryngology",
+        "Psychiatry",
+        "General Surgery"
+      ],
+      "max_rank_change": 4,
+      "mean_rank_change": 1.14,
+      "ranking_preserved": false
+    }
+  },
+  "fanaroff_benchmark": {
+    "our_study": {
+      "n_guidelines": 17,
+      "n_recommendations": 2509,
+      "pct_A": 14.5,
+      "pct_B": 32.2,
+      "pct_C": 53.3
+    },
+    "fanaroff_2019": {
+      "n_guidelines": 25,
+      "n_recommendations": 3399,
+      "pct_A": 14.2,
+      "pct_B": 31.0,
+      "pct_C": 54.8
+    },
+    "interpretation": "Our ESC sample (2509 recs from 17 guidelines) shows 14.5% Level A vs Fanaroff's 14.2% across 3399 recs. Distribution is consistent with published benchmarks."
+  },
+  "temporal": {
+    "all": {
+      "n": 22859,
+      "mean_loe": 0.496,
+      "evidence_gap": 0.504,
+      "pct_level_a": 12.1,
+      "year_range": "2003-2026"
+    },
+    "recent_2021_2026": {
+      "n": 14822,
+      "mean_loe": 0.495,
+      "evidence_gap": 0.505,
+      "pct_level_a": 12.7,
+      "year_range": "2021-2026"
+    },
+    "older_pre_2021": {
+      "n": 8037,
+      "mean_loe": 0.497,
+      "evidence_gap": 0.503,
+      "pct_level_a": 10.9,
+      "year_range": "2003-2020"
+    }
+  },
+  "coverage": {
+    "societies_identified": 84,
+    "societies_included": 77,
+    "pct_societies": 91.7,
+    "specialties_identified": 36,
+    "specialties_included": 24,
+    "pct_specialties": 66.7,
+    "total_guidelines_identified": 1076,
+    "guidelines_extracted": 536,
+    "pct_guidelines": 49.8,
+    "societies_blocked": [
+      {
+        "society": "AHA/ACC",
+        "specialty": "Cardiology",
+        "reason": "Wolters Kluwer paywall"
+      },
+      {
+        "society": "ASCO",
+        "specialty": "Oncology",
+        "reason": "Elsevier paywall"
+      },
+      {
+        "society": "ASH",
+        "specialty": "Hematology",
+        "reason": "Silverchair (abstract-only in PMC)"
+      },
+      {
+        "society": "AAN",
+        "specialty": "Neurology",
+        "reason": "Sage paywall"
+      },
+      {
+        "society": "ACOG (most)",
+        "specialty": "Obstetrics & Gynaecology",
+        "reason": "LWW paywall"
+      },
+      {
+        "society": "Endocrine Society",
+        "specialty": "Endocrinology",
+        "reason": "OUP paywall"
+      },
+      {
+        "society": "IDSA (most)",
+        "specialty": "Infectious Disease",
+        "reason": "OUP paywall"
+      },
+      {
+        "society": "AAO",
+        "specialty": "Ophthalmology",
+        "reason": "Login required"
+      },
+      {
+        "society": "ADA",
+        "specialty": "Endocrinology/Diabetes",
+        "reason": "Playwright content block"
+      },
+      {
+        "society": "CCS",
+        "specialty": "Cardiology",
+        "reason": "Paywalled (identified, not obtained)"
+      },
+      {
+        "society": "CHEST/ACCP",
+        "specialty": "Pulmonology",
+        "reason": "Paywalled (identified, not obtained)"
+      },
+      {
+        "society": "ESH",
+        "specialty": "Cardiology",
+        "reason": "Paywalled (identified, not obtained)"
+      },
+      {
+        "society": "NHG",
+        "specialty": "Family Medicine",
+        "reason": "Excluded: non-English (Dutch)"
+      },
+      {
+        "society": "DEGAM",
+        "specialty": "Family Medicine",
+        "reason": "Excluded: non-English (German)"
+      }
+    ]
+  },
+  "normalization_confidence": {
+    "ESC_A": "High",
+    "ESC_B": "Moderate",
+    "ESC_C": "Moderate",
+    "GRADE_High": "High",
+    "GRADE_Moderate": "High",
+    "GRADE_Low": "High",
+    "GRADE_Very Low": "High",
+    "ESMO_I": "High",
+    "ESMO_II": "High",
+    "ESMO_III": "High",
+    "ESMO_IV": "High",
+    "ESMO_V": "High",
+    "Oxford_1a": "High",
+    "Oxford_1b": "High",
+    "Oxford_2a": "High",
+    "Oxford_2b": "High",
+    "Oxford_3": "High",
+    "Oxford_4": "High",
+    "Oxford_5": "High",
+    "GINA_A": "High",
+    "GINA_B": "High",
+    "GINA_C": "Moderate",
+    "GINA_D": "High",
+    "SIGN_A": "High",
+    "SIGN_B": "High",
+    "SIGN_C": "Moderate",
+    "SIGN_GPP": "Moderate",
+    "AHA_A": "High",
+    "AHA_B-R": "High",
+    "AHA_B-NR": "Moderate",
+    "AHA_C-LD": "Moderate",
+    "AHA_C-EO": "Moderate",
+    "ASCO_High": "High",
+    "ASCO_Intermediate": "High",
+    "ASCO_Moderate": "High",
+    "ASCO_Low": "High",
+    "EAU_Strong": "Low",
+    "EAU_Weak": "Low",
+    "AAOS_Strong": "Low",
+    "AAOS_Moderate": "Moderate",
+    "AAOS_Limited": "Moderate",
+    "AAOS_Consensus": "Moderate"
+  },
+  "validation_sample_n": 1179
+}
