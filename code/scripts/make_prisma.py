@@ -39,16 +39,17 @@ def live_counts():
 
 C = live_counts()
 
-# Identification denominators (see analysis.coverage_analysis / EXPANSION_METHODOLOGY.md)
-IDENT_GUIDELINES = 1076   # current guidelines identified across candidate societies
+# Society-level identification (the defensible, itemizable denominator).
 CANDIDATE_SOCIETIES = 84  # candidate societies identified by the structured search
+SOC_NOT_OBTAINED = 7      # societies excluded: paywalled or non-English only (eTable 2)
+INCLUDED_SOCIETIES = CANDIDATE_SOCIETIES - SOC_NOT_OBTAINED   # 77
 
-# Exclusion accounting (guideline level): identified -> included
-EXCLUDED_TOTAL = IDENT_GUIDELINES - C["guidelines"]
-EXC_NO_LEVEL = 20         # graded by strength of recommendation only (17) or not graded (3)
-EXC_SINGLE = 5            # single-recommendation documents
-EXC_SUPERSEDED = 22       # superseded editions
-EXC_ACCESS_LANG = EXCLUDED_TOTAL - EXC_NO_LEVEL - EXC_SINGLE - EXC_SUPERSEDED
+# Guideline-level node counts. The TOTALS are defensible (distinct records assessed
+# from the 77 included societies = included + excluded); only the per-reason
+# breakdown of the excluded set is not asserted, so reasons are listed un-numbered.
+EXCLUDED_GUIDELINES = 189
+RETRIEVED_GUIDELINES = C["guidelines"] + EXCLUDED_GUIDELINES   # 536 + 189 = 725
+assert RETRIEVED_GUIDELINES == 725, RETRIEVED_GUIDELINES
 
 # ----------------------------------------------------------------------------- #
 fig, ax = plt.subplots(figsize=(11, 9))
@@ -100,34 +101,33 @@ box(MAIN_X, 89.0, MAIN_W, 10.0,
 
 box(MAIN_X, 70.0, MAIN_W, 15.0,
     "Guideline-issuing professional societies identified through\n"
-    "guideline registries (the ECRI Guidelines Trust and the\n"
-    "Guidelines International Network), PubMed (Practice Guideline\n"
-    "publication type), structured review of society websites, and\n"
-    "an audit of graded guidance published in societies' own\n"
-    f"journals (June 2026; {CANDIDATE_SOCIETIES} candidate societies)",
+    "guideline registries (ECRI, Guidelines International Network),\n"
+    "PubMed (Practice Guideline type), society websites, and an\n"
+    "audit of graded guidance in societies' own journals (June 2026).\n"
+    f"{CANDIDATE_SOCIETIES} candidate societies; {SOC_NOT_OBTAINED} not obtained (paywalled or\n"
+    f"non-English only), yielding {INCLUDED_SOCIETIES} included societies",
     ha="left", fs=10.0)
 
 box(MAIN_X, 61.0, MAIN_W, 6.5,
-    "Clinical practice guidelines identified across candidate\n"
-    f"societies (n = {IDENT_GUIDELINES:,})",
+    f"Current guidelines of the {INCLUDED_SOCIETIES} included societies retrieved\n"
+    f"(n = {RETRIEVED_GUIDELINES}; PubMed Central, publisher open access)",
     ha="left", fs=10.0)
 
 # ----- screening -----
 box(MAIN_X, 49.0, MAIN_W, 6.5,
-    "Clinical practice guidelines screened against the\n"
-    f"eligibility criteria (n = {IDENT_GUIDELINES:,})",
+    "Guidelines screened against the prespecified\n"
+    f"eligibility criteria (n = {RETRIEVED_GUIDELINES})",
     ha="left", fs=10.0)
 
-box(EXC_X, 36.0, EXC_W, 29.0,
-    f"Guidelines excluded or not obtained (n = {EXCLUDED_TOTAL}):\n\n"
-    "•  Not openly accessible (behind a journal\n"
-    "    publisher paywall), or published only in a\n"
-    f"    language other than English: {EXC_ACCESS_LANG}\n\n"
-    "•  No evidence level assigned to each\n"
-    "    recommendation (graded by strength of\n"
-    f"    recommendation only, or not graded): {EXC_NO_LEVEL}\n\n"
-    f"•  Single-recommendation documents: {EXC_SINGLE}\n\n"
-    f"•  Superseded by a more recent edition: {EXC_SUPERSEDED}",
+box(EXC_X, 38.0, EXC_W, 25.0,
+    f"Guidelines excluded (n = {EXCLUDED_GUIDELINES}):\n\n"
+    "•  Superseded or duplicate edition (de-\n"
+    "    duplicated to the most recent version)\n\n"
+    "•  Graded by strength of recommendation\n"
+    "    only, with no level of evidence\n\n"
+    "•  No per-recommendation evidence grading\n\n"
+    "•  Not a clinical practice guideline (review,\n"
+    "    commentary, methods, or letter)",
     fc=GREY, ha="left", fs=8.5, ec="#8a8a8a")
 
 # ----- included -----
@@ -162,4 +162,4 @@ for ext in ("pdf", "png", "svg"):
     fig.savefig(out, bbox_inches="tight", dpi=300, pad_inches=0.05)
     print("wrote", out)
 plt.close(fig)
-print("counts:", C, "| excluded:", EXCLUDED_TOTAL, "access/lang:", EXC_ACCESS_LANG)
+print("counts:",C,"| societies:",CANDIDATE_SOCIETIES,"->",INCLUDED_SOCIETIES)
