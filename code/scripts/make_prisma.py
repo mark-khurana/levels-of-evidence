@@ -45,10 +45,10 @@ C = live_counts()
 # entries, and out-of-frame societies), so a hard "n retrieved / n excluded"
 # does not hold up. Only the included count (536, from the atlas) is reported at
 # the guideline level; exclusion reasons are listed qualitatively.
-CANDIDATE_SOCIETIES = 87       # candidate societies, fully enumerable (77 + 10 excluded)
-SOC_NOT_OBTAINED = 5           # paywalled (CCS, CHEST/ACCP, ESH) or non-English (NHG, DEGAM)
-SOC_GRADING_EXCLUDED = 5       # graded without a per-recommendation LoE (EAU, BSAC, ESTES, ACS, SVS)
-SOC_EXCLUDED = SOC_NOT_OBTAINED + SOC_GRADING_EXCLUDED         # 10
+CANDIDATE_SOCIETIES = 82       # 77 included + 5 verified excluded (fully enumerable)
+SOC_NONENGLISH = 2             # guidelines published only in a non-English language (NHG, DEGAM)
+SOC_NO_LOE = 3                 # no per-recommendation level of evidence (EAU, BSAC, ESTES)
+SOC_EXCLUDED = SOC_NONENGLISH + SOC_NO_LOE                     # 5
 INCLUDED_SOCIETIES = CANDIDATE_SOCIETIES - SOC_EXCLUDED        # 77
 assert INCLUDED_SOCIETIES == 77, INCLUDED_SOCIETIES
 
@@ -106,10 +106,9 @@ box(MAIN_X, 69.0, MAIN_W, 16.0,
     "PubMed (Practice Guideline type), society websites, and an\n"
     "audit of graded guidance in societies' own journals (June 2026).\n"
     f"{CANDIDATE_SOCIETIES} candidate societies identified; {SOC_EXCLUDED} excluded "
-    f"({SOC_NOT_OBTAINED} not obtained\n"
-    "[paywalled or non-English]; "
-    f"{SOC_GRADING_EXCLUDED} graded without a per-recommendation\n"
-    f"level of evidence), yielding {INCLUDED_SOCIETIES} included societies (eTable 2)",
+    f"({SOC_NONENGLISH} non-English;\n"
+    f"{SOC_NO_LOE} without a per-recommendation level of evidence),\n"
+    f"yielding {INCLUDED_SOCIETIES} included societies (eTable 2)",
     ha="left", fs=9.5)
 
 box(MAIN_X, 61.0, MAIN_W, 6.5,
