@@ -40,16 +40,14 @@ def live_counts():
 C = live_counts()
 
 # Society-level identification (the defensible, itemizable denominator).
+# Guideline-level screened/excluded counts are NOT asserted: the excluded-record
+# set is de-duplication/extraction churn (failed-extraction stubs, list-only
+# entries, and out-of-frame societies), so a hard "n retrieved / n excluded"
+# does not hold up. Only the included count (536, from the atlas) is reported at
+# the guideline level; exclusion reasons are listed qualitatively.
 CANDIDATE_SOCIETIES = 84  # candidate societies identified by the structured search
 SOC_NOT_OBTAINED = 7      # societies excluded: paywalled or non-English only (eTable 2)
 INCLUDED_SOCIETIES = CANDIDATE_SOCIETIES - SOC_NOT_OBTAINED   # 77
-
-# Guideline-level node counts. The TOTALS are defensible (distinct records assessed
-# from the 77 included societies = included + excluded); only the per-reason
-# breakdown of the excluded set is not asserted, so reasons are listed un-numbered.
-EXCLUDED_GUIDELINES = 189
-RETRIEVED_GUIDELINES = C["guidelines"] + EXCLUDED_GUIDELINES   # 536 + 189 = 725
-assert RETRIEVED_GUIDELINES == 725, RETRIEVED_GUIDELINES
 
 # ----------------------------------------------------------------------------- #
 fig, ax = plt.subplots(figsize=(11, 9))
@@ -109,18 +107,18 @@ box(MAIN_X, 70.0, MAIN_W, 15.0,
     ha="left", fs=10.0)
 
 box(MAIN_X, 61.0, MAIN_W, 6.5,
-    f"Current guidelines of the {INCLUDED_SOCIETIES} included societies retrieved\n"
-    f"(n = {RETRIEVED_GUIDELINES}; PubMed Central, publisher open access)",
+    f"Current guidelines of the {INCLUDED_SOCIETIES} included societies\n"
+    "retrieved (PubMed Central, publisher open access)",
     ha="left", fs=10.0)
 
 # ----- screening -----
 box(MAIN_X, 49.0, MAIN_W, 6.5,
     "Guidelines screened against the prespecified\n"
-    f"eligibility criteria (n = {RETRIEVED_GUIDELINES})",
+    "eligibility criteria",
     ha="left", fs=10.0)
 
 box(EXC_X, 38.0, EXC_W, 25.0,
-    f"Guidelines excluded (n = {EXCLUDED_GUIDELINES}):\n\n"
+    "Guidelines excluded:\n\n"
     "•  Superseded or duplicate edition (de-\n"
     "    duplicated to the most recent version)\n\n"
     "•  Graded by strength of recommendation\n"
