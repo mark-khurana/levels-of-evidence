@@ -140,8 +140,9 @@ box(MAIN_X, 28.0, MAIN_W, 7.0,
     "evidence level mapped to the normalized scale (none unmappable)",
     fc=GREEN, ha="left", fs=10.0)
 
-box(MAIN_X, 18.0, MAIN_W, 7.0,
-    "Primary analysis — specialties with at least 5 guidelines\n"
+box(MAIN_X, 16.0, MAIN_W, 9.0,
+    "Primary analysis — specialties with at least 5 guidelines and\n"
+    "guidelines with at least 3 graded recommendations\n"
     f"(n = {C['prim_recs']:,} recommendations; {C['prim_spec']} specialties; "
     f"{C['prim_soc']} societies)",
     fc=GREEN, ha="left", fs=10.0)
