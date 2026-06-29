@@ -45,9 +45,12 @@ C = live_counts()
 # entries, and out-of-frame societies), so a hard "n retrieved / n excluded"
 # does not hold up. Only the included count (536, from the atlas) is reported at
 # the guideline level; exclusion reasons are listed qualitatively.
-CANDIDATE_SOCIETIES = 84  # candidate societies identified by the structured search
-SOC_NOT_OBTAINED = 7      # societies excluded: paywalled or non-English only (eTable 2)
-INCLUDED_SOCIETIES = CANDIDATE_SOCIETIES - SOC_NOT_OBTAINED   # 77
+CANDIDATE_SOCIETIES = 87       # candidate societies, fully enumerable (77 + 10 excluded)
+SOC_NOT_OBTAINED = 5           # paywalled (CCS, CHEST/ACCP, ESH) or non-English (NHG, DEGAM)
+SOC_GRADING_EXCLUDED = 5       # graded without a per-recommendation LoE (EAU, BSAC, ESTES, ACS, SVS)
+SOC_EXCLUDED = SOC_NOT_OBTAINED + SOC_GRADING_EXCLUDED         # 10
+INCLUDED_SOCIETIES = CANDIDATE_SOCIETIES - SOC_EXCLUDED        # 77
+assert INCLUDED_SOCIETIES == 77, INCLUDED_SOCIETIES
 
 # ----------------------------------------------------------------------------- #
 fig, ax = plt.subplots(figsize=(11, 9))
@@ -97,14 +100,17 @@ box(MAIN_X, 89.0, MAIN_W, 10.0,
     "European Union of Medical Specialists (43 sections)",
     ha="left", fs=10.0)
 
-box(MAIN_X, 70.0, MAIN_W, 15.0,
+box(MAIN_X, 69.0, MAIN_W, 16.0,
     "Guideline-issuing professional societies identified through\n"
     "guideline registries (ECRI, Guidelines International Network),\n"
     "PubMed (Practice Guideline type), society websites, and an\n"
     "audit of graded guidance in societies' own journals (June 2026).\n"
-    f"{CANDIDATE_SOCIETIES} candidate societies; {SOC_NOT_OBTAINED} not obtained (paywalled or\n"
-    f"non-English only), yielding {INCLUDED_SOCIETIES} included societies",
-    ha="left", fs=10.0)
+    f"{CANDIDATE_SOCIETIES} candidate societies identified; {SOC_EXCLUDED} excluded "
+    f"({SOC_NOT_OBTAINED} not obtained\n"
+    "[paywalled or non-English]; "
+    f"{SOC_GRADING_EXCLUDED} graded without a per-recommendation\n"
+    f"level of evidence), yielding {INCLUDED_SOCIETIES} included societies (eTable 2)",
+    ha="left", fs=9.5)
 
 box(MAIN_X, 61.0, MAIN_W, 6.5,
     f"Current guidelines of the {INCLUDED_SOCIETIES} included societies\n"
@@ -149,7 +155,7 @@ box(MAIN_X, 16.0, MAIN_W, 9.0,
 
 # ----- arrows -----
 arrow(MX, 89.0, MX, 85.0)      # i1 -> i2
-arrow(MX, 70.0, MX, 67.5)      # i2 -> i3
+arrow(MX, 69.0, MX, 67.5)      # i2 -> i3
 arrow(MX, 61.0, MX, 55.5)      # i3 -> s1
 arrow(MX, 49.0, MX, 45.0)      # s1 -> inc1
 arrow(MX, 38.0, MX, 35.0)      # inc1 -> inc2
