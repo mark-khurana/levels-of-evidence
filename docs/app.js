@@ -404,13 +404,19 @@ function highlightSearch(text) {
 function exportCSV() {
     const recs = getDrilldownRecs();
     const CC_BY = new Set(['ESMO','ESCMID','ESHRE','EULAR','ERS','KDIGO','GINA','GOLD','ADA','EAU']);
-    const headers = ['society','specialty','guideline','year','text_excerpt','loe','loe_normalized','evidence_gap','grading_system'];
+    const headers = ['society','specialty','guideline','year','text_excerpt','loe','loe_normalized','evidence_gap'];
+    const numCols = new Set(['loe_normalized','evidence_gap']);
     const rows = recs.map(r => {
         const copy = {...r};
         copy.text_excerpt = r.text.length > 50 ? r.text.substring(0, 50) + '...' : r.text;
         const gl = DB.guidelines.find(g => g.id === r.guideline_id);
         copy.guideline = gl ? `${gl.title} (${gl.year})` : r.guideline_id;
-        return headers.map(h => `"${String(copy[h]||'').replace(/"/g,'""')}"`).join(',');
+        return headers.map(h => {
+            // round numeric scores to 2 decimals so no 3-decimal value (eg 0.125)
+            // is misread as thousands by spreadsheets in non-US locales
+            const v = numCols.has(h) && copy[h] != null ? Number(copy[h]).toFixed(2) : copy[h];
+            return `"${String(v ?? '').replace(/"/g,'""')}"`;
+        }).join(',');
     });
     const csv = [headers.join(','), ...rows].join('\n');
     const blob = new Blob([csv], { type: 'text/csv' });
