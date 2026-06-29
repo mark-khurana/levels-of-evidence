@@ -294,58 +294,6 @@ def temporal_analysis(db):
     return result
 
 
-def coverage_analysis(db):
-    """Quantify what we captured vs what exists.
-
-    Identification proceeded in two waves:
-      Wave 1 (original): PubMed [Practice Guideline] filter + ECRI/GIN repositories
-        -> 959 guideline records, 52 societies, 27 specialties identified.
-      Wave 2 (society-coverage expansion, 2026-06): a structured society-universe
-        audit across all specialties identified ~33 additional eligible societies
-        (per-recommendation graded, open access, English) that the wave-1 search
-        had missed because they publish guidance in their own journals. Targeted
-        retrieval added the expansion guidelines (society-targeted search yield
-        ~117 candidate guidelines screened).
-    Denominators below reflect the COMBINED identified universe across both waves.
-    Coverage percentages are approximate (the identified universe is itself a
-    moving target); the central evidence-quality findings do not depend on them.
-    """
-    n_soc = len(set(g["society"] for g in db["guidelines"]))
-    n_spec = len(set(g["specialty"] for g in db["guidelines"]))
-    n_gl = len(db["guidelines"])
-    # Combined identified universe (wave1 + wave2 society-coverage audit)
-    societies_identified = 84   # wave1 52 + ~32 net-new eligible (society-coverage audit)
-    specialties_identified = max(36, n_spec)
-    total_identified = 959 + 117  # wave1 records + wave2 society-targeted candidates
-    return {
-        "societies_identified": societies_identified,
-        "societies_included": n_soc,
-        "pct_societies": round(n_soc / societies_identified * 100, 1),
-        "specialties_identified": specialties_identified,
-        "specialties_included": n_spec,
-        "pct_specialties": round(n_spec / specialties_identified * 100, 1),
-        "total_guidelines_identified": total_identified,
-        "guidelines_extracted": n_gl,
-        "pct_guidelines": round(n_gl / total_identified * 100, 1),
-        "societies_blocked": [
-            {"society": "AHA/ACC", "specialty": "Cardiology", "reason": "Wolters Kluwer paywall"},
-            {"society": "ASCO", "specialty": "Oncology", "reason": "Elsevier paywall"},
-            {"society": "ASH", "specialty": "Hematology", "reason": "Silverchair (abstract-only in PMC)"},
-            {"society": "AAN", "specialty": "Neurology", "reason": "Sage paywall"},
-            {"society": "ACOG (most)", "specialty": "Obstetrics & Gynaecology", "reason": "LWW paywall"},
-            {"society": "Endocrine Society", "specialty": "Endocrinology", "reason": "OUP paywall"},
-            {"society": "IDSA (most)", "specialty": "Infectious Disease", "reason": "OUP paywall"},
-            {"society": "AAO", "specialty": "Ophthalmology", "reason": "Login required"},
-            {"society": "ADA", "specialty": "Endocrinology/Diabetes", "reason": "Playwright content block"},
-            # Wave-2 identified but NOT obtained:
-            {"society": "CCS", "specialty": "Cardiology", "reason": "Paywalled (identified, not obtained)"},
-            {"society": "CHEST/ACCP", "specialty": "Pulmonology", "reason": "Paywalled (identified, not obtained)"},
-            {"society": "ESH", "specialty": "Cardiology", "reason": "Paywalled (identified, not obtained)"},
-            {"society": "NHG", "specialty": "Family Medicine", "reason": "Excluded: non-English (Dutch)"},
-            {"society": "DEGAM", "specialty": "Family Medicine", "reason": "Excluded: non-English (German)"},
-        ],
-    }
-
 
 def run_all():
     db = load_data()
@@ -398,12 +346,9 @@ def run_all():
     for label, t in temporal.items():
         print(f"   {label}: n={t['n']}, gap={t['evidence_gap']:.3f}, %A={t['pct_level_a']:.1f}%, years={t['year_range']}")
 
-    # 6. Coverage
-    print("\n6. COVERAGE ANALYSIS")
-    cov = coverage_analysis(db)
-    print(f"   Societies: {cov['societies_included']}/{cov['societies_identified']} ({cov['pct_societies']:.1f}%)")
-    print(f"   Specialties: {cov['specialties_included']}/{cov['specialties_identified']} ({cov['pct_specialties']:.1f}%)")
-    print(f"   Guidelines: {cov['guidelines_extracted']}/{cov['total_guidelines_identified']} ({cov['pct_guidelines']:.1f}%)")
+    # 6. (Coverage block removed: the legacy identified-universe counts and the
+    #    "societies_blocked" list were stale/inaccurate and unused downstream.
+    #    The defensible society funnel lives in eFigure 1 / PRISMA_METHODS.md.)
 
     # 7. Validation sample
     print("\n7. VALIDATION SAMPLE")
@@ -449,7 +394,6 @@ def run_all():
         },
         "fanaroff_benchmark": bench,
         "temporal": temporal,
-        "coverage": cov,
         "normalization_confidence": NORM_CONFIDENCE,
         "validation_sample_n": len(sample),
     }
