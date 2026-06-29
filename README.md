@@ -30,6 +30,10 @@ data/
   eTable2_included_societies.md   Included societies + access/extraction notes
   eTable3_normalization_crosswalk.md  Grading-system → 5-tier crosswalk
   eTable4_all_specialties.md      All specialties (incl. those below the primary threshold)
+  validation/
+    validation_loe_accuracy.csv             Reviewer check of evidence-level accuracy
+                                            (n = 1,179; recommendation text truncated)
+    validation_extraction_completeness.csv  Reviewer recount, 1 guideline per society (n = 77)
 
 figures/                  Manuscript figures (Figure 1–3, eFigure 1–2; PNG + PDF)
 
